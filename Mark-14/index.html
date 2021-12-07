@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock: Profit or Loss</title>
+    <link rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header-container">
+        <h2>
+          Check <span class="header-container-profit">Profit</span> or
+          <span class="header-container-loss">Loss</span> on your Stock
+        </h2>
+        <p class="header-para">
+          Enter the cost price of your stock, enter the units of it and the
+          current price of that stock. Let's see if that's a profit or a loss !
+        </p>
+      </header>
+
+      <form class="form">
+        <label class="label" for="form_purchase_price">Purchase at: (₹) </label>
+        <input
+          type="number"
+          placeholder="Purchase at ₹ "
+          class="input_number input_purchase"
+          id="form_purchase_price"
+        />
+        <label class="label" for="form_purchase_units">Units Purchased: </label>
+        <input
+          type="number"
+          placeholder="Units Purchased"
+          id="form_purchase_units"
+          class="input_number input_units"
+        />
+        <label class="label" for="form_purchase_current"
+          >Current Price: (₹)</label
+        >
+        <input
+          type="number"
+          class="input_number input_current"
+          id="form_purchase_current"
+          placeholder="Current Price"
+        />
+        <button class="submit_btn">Check</button>
+        <div class="error"></div>
+        <div class="output_text"></div>
+      </form>
+    </main>
+    <script src="./src/index.js"></script>
+  </body>
+</html>
