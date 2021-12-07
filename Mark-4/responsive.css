@@ -1,0 +1,146 @@
+@media screen and (max-width: 1200px) {
+  * {
+    margin: 0px;
+    padding: 0;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    height: auto;
+    overflow: auto;
+  }
+  .inline {
+    margin: 1rem;
+  }
+  .nav-heading {
+    margin-top: 0.4rem;
+
+    justify-content: center;
+    margin-left: 1rem;
+  }
+  .index-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .section {
+    margin: 2rem;
+    flex-direction: column;
+    flex-wrap: none;
+  }
+  .color {
+    display: flex;
+    justify-self: center;
+    color: white;
+    margin: -0.5rem;
+  }
+  .navlist {
+    display: flex;
+    justify-content: center;
+    margin-left: 1rem;
+    margin-top: -2rem;
+  }
+  .homebox {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 57vw;
+    margin: 0rem;
+    justify-content: center;
+    place-items: center;
+    padding: 2rem;
+  }
+  .me-img {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 173px;
+    margin-top: -5rem;
+    margin-bottom: 4rem;
+    margin-left: 0;
+  }
+  .blog-img {
+    display: none;
+  }
+  .project-img {
+    display: none;
+  }
+
+  .container1 {
+    padding-top: 1rem;
+  }
+  footer {
+    padding: 3rem;
+  }
+  .footer-heading {
+    text-align: center;
+    font-size: 2rem;
+    padding: 1rem;
+  }
+  .all-footer {
+    color: white;
+
+    width: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+    place-content: flex-end;
+  }
+
+  /*project part*/
+  .btns {
+    padding: 1rem;
+    margin-left: 0.5rem;
+  }
+  .box12 {
+    flex-direction: column;
+    overflow: scrool;
+    justify-self: center;
+  }
+  .projects-div {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    padding: 2rem;
+  }
+  .projectbox {
+    height: 35vh;
+    width: 93vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 0;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .heading1 {
+    margin: 0rem;
+    margin-top: -2rem;
+  }
+  .projects-btn {
+    margin: auto;
+  }
+  .projects-special-btn {
+    margin: auto;
+  }
+
+  /*blogs part*/
+  .image-blog {
+    height: 31vh;
+    margin-bottom: 2rem;
+  }
+  .read {
+    margin-bottom: 2rem;
+  }
+  .for-flex {
+    justify-content: center;
+  }
+  .box {
+    width: 72vw;
+    height: auto;
+    margin: 2.5rem;
+    padding: 1rem;
+  }
+}
