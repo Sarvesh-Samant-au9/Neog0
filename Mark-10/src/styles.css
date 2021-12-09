@@ -1,179 +1,69 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  padding: 1rem;
+  text-align: center;
+}
+
+.header-heading {
+  color: #5454d4;
+  font-weight: 500;
+}
+
 .container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  width: 35vw;
-  margin-left: 30rem;
-  height: auto;
-  background-color: #a00993;
-  box-shadow: 3px 2px 3px 1px;
-  border-radius: 3px;
+  padding: 0rem 1rem;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
 }
-.heading {
-  display: flex;
-  justify-content: center;
-  color: white;
-  font-size: 1.5rem;
-  font-weight: 900;
+
+label {
+  display: block;
+  font-size: 1.2rem;
 }
-#returnChange {
-  color: #fff;
+
+input {
+  display: block;
+  margin: 1rem auto;
+  border: solid 2px #5454d4;
+  width: 60%;
+  height: 4vh;
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.8rem;
 }
-.para {
-  margin-left: 3rem;
-  color: white;
-  font-size: 1rem;
-  font-weight: 800;
+
+button {
+  display: block;
+  margin: auto;
+  background-color: #5454d4;
+  border-radius: 0.5rem;
+  color: whitesmoke;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  border: none;
 }
-.bill-container {
-  display: flex;
-  flex-direction: column;
-}
-.bill-input {
-  font-size: 1rem;
-  height: 40px;
-  width: 25vw;
-}
-.btn {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  height: 30px;
-  width: 5vw;
-  margin-left: 9.5rem;
-  justify-content: center;
-  background-color: white;
-  color: black;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  cursor: pointer;
-}
-.btn:hover {
-  background-color: #ff00dd;
-  color: white;
-  border: 1px solid black;
-}
-.inputbox {
-  display: flex;
-  flex-direction: column;
-}
-.user-cash {
-  font-size: 1rem;
-  height: 40px;
-  width: 25vw;
-}
-.check {
-  margin-top: 1rem;
-  height: 30px;
-  width: 5vw;
-  margin-left: 9.5rem;
-  justify-content: center;
-  background-color: white;
-  color: black;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  cursor: pointer;
-}
-.check:hover {
-  background-color: #ff00dd;
-  color: white;
-  border: 1px solid black;
-}
-.error {
-  display: none;
-  color: white;
-  font-size: 1.4rem;
-  margin-right: 1.2rem;
+
+#output-heading {
+  color: #5454d4;
+  font-weight: 500;
 }
 table {
-  font-size: 1.2rem;
-  padding: 1.3rem;
-  background-color: white;
-  margin-bottom: 1rem;
+  border: 2px solid #5454d4;
+  margin: auto;
+  width: 80%;
 }
-
 td {
-  padding: 0.4rem;
-  height: auto;
-  justify-content: center;
-  align-items: center;
-}
-.noOfNotes {
-  width: 2rem;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-}
-table th td {
-  border: 1px solid black;
-  padding: 0.4rem;
+  border: 2px solid #5454d4;
 }
 th {
-  padding: -1rem;
-}
-.hidden {
-  display: none;
-}
-.hidden-table {
-  display: none;
-}
-.error-message {
-  color: white;
-  text-align: center;
-}
-.message {
-  color: white;
-  text-align: center;
+  border: 2px solid #5454d4;
 }
 
-/* responsive part */
-@media screen and (max-width: 900px) {
-  body {
-    margin: 0;
-    padding: 0;
-  }
-  .container {
-    margin: 0;
-    width: auto;
-  }
-  .heading {
-    display: flex;
-    justify-content: center;
-    margin-left: 2rem;
-  }
-  .para {
-    margin-right: 3rem;
-    margin-left: 3rem;
-  }
-  .bill-input {
-    display: flex;
-    justify-content: center;
-    width: 70vw;
-    margin-left: 0rem;
-  }
-  .btn {
-    display: flex;
-    justify-content: center;
-    width: 6rem;
-    align-items: center;
-    margin-left: 6rem;
-  }
-  .user-cash {
-    display: flex;
-    justify-content: center;
-    width: 70vw;
-    margin-left: 0rem;
-  }
-  .check {
-    display: flex;
-    justify-content: center;
-    width: 6rem;
-    align-items: center;
-    margin-left: 6rem;
-  }
-  table {
-    width: auto;
-    height: 2vh;
-    font-size: small;
-  }
+.error-message {
+  color: red;
+  padding: 0.5rem;
 }
