@@ -8,72 +8,54 @@
     <link rel="stylesheet" href="./src/styles.css" />
   </head>
   <body>
+    <header>
+      <h1 class="header-heading">Cash Register Manager</h1>
+      <p class="header-text">
+        Enter the bill amount and cash given by the customer and know minimum
+        number of notes to return.
+      </p>
+    </header>
     <div class="container">
-      <div>
-        <h2 class="heading">Welcome to cash Register Manager</h2>
-        <p class="para">
-          Enter the bill amount and cash given by the customer and know minimum
-          no of notes to return.
-        </p>
-      </div>
-
-      <div class="bill-container">
-        <h2 class="heading">Bill Amount</h2>
+      <form>
+        <label for="amount" class="label">Bill Amount</label>
         <input
           type="number"
-          id="get-in"
-          class="bill-input"
-          placeholder="Enter Bill Amount Here"
+          min="1"
+          name="amount"
+          id="amount"
+          class="userInput"
         />
-        <button id="next" class="btn">Next</button>
-        <p class="error-message"></p>
-      </div>
+        <label for="cash" class="label">Cash Given</label>
+        <input type="number" min="1" name="cash" id="cash" class="userInput" />
+      </form>
+      <div class="error-message"></div>
+      <button class="btn">Check</button>
+    </div>
+    <div class="container">
+      <h2 id="output-heading">Return Change</h2>
 
-      <div class="inputbox hidden">
-        <h2 class="heading">Cash Given</h2>
-        <input
-          type="number"
-          placeholder="Enter Cash Given by Customer"
-          class="user-cash"
-        />
-        <button class="check">Check</button>
-        <h2 class="resultText"></h2>
-        <p class="message"></p>
-      </div>
-
-      <h3 class="error">error</h3>
-
-      <h2 id="returnChange"></h2>
-      <div id="output" class="hidden table">
-        <div class="returnDiv">
-          <table class="table">
-            <tbody>
-              <tr>
-                <th>No of the Note</th>
-                <td class="noOfNotes"></td>
-                <td class="noOfNotes"></td>
-                <td class="noOfNotes"></td>
-                <td class="noOfNotes"></td>
-                <td class="noOfNotes"></td>
-                <td class="noOfNotes"></td>
-                <td class="noOfNotes"></td>
-                <td class="noOfNotes"></td>
-              </tr>
-              <tr>
-                <th>Note</th>
-                <td>2000</td>
-                <td>500</td>
-                <td>100</td>
-                <td>50</td>
-                <td>20</td>
-                <td>10</td>
-                <td>5</td>
-                <td>1</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <table>
+        <tr>
+          <th>Note</th>
+          <td>2000</td>
+          <td>500</td>
+          <td>100</td>
+          <td>20</td>
+          <td>10</td>
+          <td>5</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <th>No of Notes</th>
+          <td class="notes"></td>
+          <td class="notes"></td>
+          <td class="notes"></td>
+          <td class="notes"></td>
+          <td class="notes"></td>
+          <td class="notes"></td>
+          <td class="notes"></td>
+        </tr>
+      </table>
     </div>
     <script src="./src/index.js"></script>
   </body>
