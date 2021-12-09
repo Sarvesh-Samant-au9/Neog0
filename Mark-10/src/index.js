@@ -1,52 +1,63 @@
-const inputMain = document.querySelector("#get-in");
-const btnNext = document.querySelector("#next");
-const billInput = document.querySelector(".inputbox");
-const input2 = document.querySelector(".user-cash");
-const btnCheck = document.querySelector(".check");
-const Table = document.querySelector(".table");
-const errorMessage = document.querySelector(".error-message");
-const message = document.querySelector(".message");
-const notes = [2000, 500, 100, 50, 20, 10, 5, 1];
+const cells = document.querySelectorAll(".notes");
+const map = {
+  2000: cells[0],
+  500: cells[1],
+  100: cells[2],
+  20: cells[3],
+  10: cells[4],
+  5: cells[5],
+  1: cells[6]
+};
 
-const noOfnotes = document.querySelectorAll(".noOfNotes");
+const billAmt = document.querySelector("#amount");
+const cashGiven = document.querySelector("#cash");
+const checkBtn = document.querySelector(".btn");
+const error = document.querySelector(".error-message");
+billAmt.value = "";
+cashGiven.value = "";
 
-btnNext.addEventListener("click", clickHandler);
+const fillCell = (denomination, num) => {
+  map[denomination].innerText = num;
+};
 
-function clickHandler() {
-  console.log(inputMain.value);
-  if (inputMain.value >= 1) {
-    return (
-      billInput.classList.remove("hidden"),
-      btnNext.classList.add("hidden"),
-      errorMessage.classList.add("hidden")
-    );
-  } else {
-    errorMessage.innerText = "Please Enter the Bill-Amount First";
+const getChange = (denominations, diff) => {
+  let leftAmt = diff;
+  let result = {};
+  denominations.forEach((d) => {
+    let numNotes = Math.floor(leftAmt / d);
+    result[d] = numNotes;
+    leftAmt = leftAmt % d;
+  });
+  return result;
+};
+
+checkBtn.addEventListener("click", () => {
+  let amount = billAmt.value;
+  let cash = cashGiven.value;
+  if (amount === "" || cash === "") {
+    error.innerText = "Please enter valid numerical amounts";
+    error.style.color = "red";
+    return;
   }
-}
-
-btnCheck.addEventListener("click", clickhandler2);
-
-function clickhandler2() {
-  if (input2.value >= inputMain.value) {
-    if (inputMain.value && input2.value) {
-      let balance = input2.value - inputMain.value;
-      if (balance === 0) {
-        message.innerText = "Thanku !! You Have Paid Right Amount !";
-      } else if (balance > 0) {
-        message.classList.add("hidden");
-        let remainingAmount = balance;
-        for (let i = 0; i <= notes.length; i++) {
-          while (remainingAmount >= notes[i]) {
-            let change = Math.floor(remainingAmount / notes[i]);
-            Table.classList.remove("hidden");
-            noOfnotes[i].innerHTML = `${change}`;
-            remainingAmount = remainingAmount % notes[i];
-          }
-        }
-      }
-    } else {
-      message.innerText = "Bill Amount is greater than given Cash";
-    }
+  amount = Number(amount);
+  cash = Number(cash);
+  let diff = cash - amount;
+  error.innerText = "";
+  if (diff < 0) {
+    error.innerText = "Insufficient cash";
+    error.style.color = "red";
+    error.style.fontWeight = 600;
+    return;
   }
-}
+  if (diff === 0) {
+    error.innerText =
+      "No change needed to be given! Thanks for giving us the exact amount!";
+    error.style.color = "green";
+    return;
+  }
+  let denominations = Object.keys(map);
+  let changeNotes = getChange(denominations.reverse(), diff);
+  denominations.forEach((d) => {
+    fillCell(d, changeNotes[d]);
+  });
+});
